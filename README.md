@@ -165,12 +165,7 @@ I opened Wireshark on the Windows 10 virtual machine and started a packet captur
 <br>
 <br>
 
-From the Windows 10 VM, I initiated an SSH connection to the Ubuntu VM using **PowerShell** with the following command: (**`ssh labuser@172.16.0.5`**).
-
-<br>
-<br>
-
-After entering the correct credentials, I successfully connected to the Ubuntu virtual machine.
+From the Windows 10 VM, I initiated an SSH connection to the Ubuntu VM using **PowerShell** with the following command: (**`ssh labuser@172.16.0.5`**). After entering the correct credentials, I successfully connected to the Ubuntu virtual machine.
   
 <img width="1221" height="566" alt="Screenshot 2026-02-24 202054" src="https://github.com/user-attachments/assets/09d8b753-4c66-44f3-bea7-886af2b5f5cd" />
 
