@@ -6,7 +6,7 @@
 
 ## Project Overview
  
-Throughout this tutorial, we focus on monitoring and analyzing network traffic between Azure Virtual Machines using Wireshark. It also includes working with Azure Network Security Groups (NSG) to manage and control network traffic. Various protocols such as `ICMP`, `SSH`, `DHCP`, `DNS`, and `RDP` are observed in Wireshark to understand how communication happens between systems or Virtual Machines.
+Throughout this lab, we focus on monitoring and analyzing network traffic between Azure Virtual Machines using Wireshark. It also includes working with Azure Network Security Groups (NSG) to manage and control network traffic. Various protocols such as `ICMP`, `SSH`, `DHCP`, `DNS`, and `RDP` are observed in Wireshark to understand how communication happens between systems or Virtual Machines.
 
 ## 🔗 Related Project: Azure VM Setup
  
