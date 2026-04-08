@@ -45,14 +45,14 @@ This includes:
 
 **1. Observing ICMP Traffic**
   
-- For this part of the lab, I observed `ICMP` traffic using Wireshark on the Windows 10 virtual machine. I used Remote Desktop Protocol (`RDP`) from my local computer to connect to the Windows 10 VM within Azure
+For this part of the lab, I observed `ICMP` traffic using Wireshark on the Windows 10 virtual machine. I used Remote Desktop Protocol (`RDP`) from my local computer to connect to the Windows 10 VM within Azure.
 
 <img width="1898" height="788" alt="Screenshot 2026-02-24 185452" src="https://github.com/user-attachments/assets/d92f10d2-3ba4-427f-97ff-9a1f1e182b5e" />
 
 <br>
 <br>
 
-- Once connected to the Windows 10 VM, I installed and launched Wireshark, started a packet capture, and applied the `ICMP` filter to display only `ICMP` traffic  
+Once connected to the Windows 10 VM, I installed and launched Wireshark, started a packet capture, and applied the `ICMP` filter to display only `ICMP` traffic  
 
 <img width="1812" height="888" alt="image" src="https://github.com/user-attachments/assets/80508f41-8992-4105-828d-9798a3fb27ed" />
 <img width="1886" height="915" alt="image" src="https://github.com/user-attachments/assets/eb959b0f-783c-411d-894a-cd462450668f" />
@@ -60,15 +60,15 @@ This includes:
 <br>
 <br>
 
-- Apply the `ICMP` filter in Wireshark
-  
+Applied the `ICMP` filter in Wireshark to only display ICMP traffic.
+
 <img width="1549" height="910" alt="image" src="https://github.com/user-attachments/assets/323c53f5-4739-415c-8b1d-3341100f01c9" />
 
 <br>
 <br>
 
-- **Retrieve the private IP address of the Ubuntu VM (linux-vm) and attempt to ping it from within the Windows 10 VM**
-1. Opening the Ubuntu VM in Azure
+**Retrieved the private IP address of the Ubuntu VM (linux-vm) and attempted to ping it from within the Windows 10 VM**
+1. Open the Ubuntu VM in Azure
 2. Navigate to the **Overview/Properties tab**
 3. Check under **Networking**
 4. Locate Private IP address (**172.16.0.5**)
@@ -83,8 +83,8 @@ This includes:
 <br>
 <br>
 
-- Open **Windows PowerShell** and `ping` Ubuntu VM's private IP address (**172.16.0.5**) from within the Windows 10 VM
-- While the ping is running on the Windows 10 VM, observe the `ICMP` request and reply traffic in Wireshark
+Opened **Windows PowerShell** and `ping` the Ubuntu VM's private IP address (**172.16.0.5**) from within the Windows 10 VM.
+While the ping was running on the Windows 10 VM, I observed the `ICMP` request and reply traffic in Wireshark.
 > [!NOTE]
 > Successful ICMP replies confirmed that communication between the Windows and Ubuntu virtual machines was working properly.
   
@@ -95,7 +95,7 @@ This includes:
 
 **2. Configuring a Firewall (Network Security Group)**
  
-- I initiated a continuous ping from the Windows 10 VM to the Ubuntu VM (Private IP address) using the `ping -t` command in PowerShell
+I initiated a continuous ping from the Windows 10 VM to the Ubuntu VM (Private IP address) using the `ping -t` command in PowerShell.
 > [!NOTE]
 > This caused the `ping` to run continuously, allowing me to analyze the traffic in real time in Wireshark.
 
@@ -104,7 +104,7 @@ This includes:
 <br>
 <br>
 
-- While the ping was running, I configured the Network Security Group (NSG) associated with the Ubuntu VM to block inbound ICMP traffic:
+While the ping was running, I configured the Network Security Group (NSG) associated with the Ubuntu VM to block inbound ICMP traffic.:
 
 1. Navigate to the Ubuntu VM in Azure
 2. Open **Network Settings**
@@ -134,7 +134,7 @@ This includes:
 <br>
 <br>
 
-- **Re-enabling `ICMP` traffic (Allow Ping again)**
+**Re-enabling `ICMP` traffic (Allow Ping again)**
 
 1. Within Azure, go to Linux VM's Network Security Group
 2. Locate the DenyInbound (ICMP) rule
@@ -146,7 +146,7 @@ This includes:
 <br>
 <br>
 
-**Result**: After re-enabling `ICMP`, I returned to the Windows 10 VM and observed that the ping replies resumed, and Wireshark showed reply packets being received again
+**Result**: After re-enabling `ICMP`, I returned to the Windows 10 VM and observed that the ping replies resumed, and Wireshark showed reply packets being received again.
 
 > [!NOTE]
 > This shows how NSGs function as a firewall by controlling inbound and outbound traffic, directly affecting connectivity between networked systems.
@@ -158,28 +158,26 @@ This includes:
 
 **3. Observing SSH Traffic**
 
-- I opened Wireshark on the Windows 10 virtual machine and started a packet capture to observe network traffic
-- I then applied the `SSH` filter to display only SSH-related packets
+I opened Wireshark on the Windows 10 virtual machine and started a packet capture to observe network traffic. Applied the `SSH` filter to display only SSH-related packets.
   
 <img width="746" height="484" alt="image" src="https://github.com/user-attachments/assets/41e9dc17-1c21-4f78-861f-1005bffa1545" />
 
 <br>
 <br>
 
-- From the Windows 10 VM, I initiated an SSH connection to the Ubuntu VM using **PowerShell** with the following command: (**`ssh labuser@172.16.0.5`**)
+From the Windows 10 VM, I initiated an SSH connection to the Ubuntu VM using **PowerShell** with the following command: (**`ssh labuser@172.16.0.5`**).
 
 <br>
 <br>
 
-- After entering the correct credentials, I successfully connected to the Ubuntu virtual machine
+After entering the correct credentials, I successfully connected to the Ubuntu virtual machine.
   
 <img width="1221" height="566" alt="Screenshot 2026-02-24 202054" src="https://github.com/user-attachments/assets/09d8b753-4c66-44f3-bea7-886af2b5f5cd" />
 
 <br>
 <br>
 
-- Once connected, I executed basic commands such as `whoami` and `pwd` within the SSH session
-- During this time, I observed continuous SSH traffic in Wireshark, confirming that communication between the two systems was active and encrypted
+Once connected, I executed basic commands such as `whoami` and `pwd` within the SSH session. During this time, I observed continuous SSH traffic in Wireshark, confirming that communication between the two systems was active and encrypted.
 
 > [!NOTE]
 > This demonstrates how `SSH` enables secure remote communication between two systems.
@@ -189,21 +187,20 @@ This includes:
 <br>
 <br>
 
-- After finishing observing the traffic, I typed `exit` and pressed Enter to close the `SSH` connection
+After finishing observing the traffic, I typed `exit` and pressed Enter to close the `SSH` connection.
 
 ---
 
 **4. Observing DHCP Traffic**
 
-- On the Windows 10 VM, I returned to Wireshark and applied a `DHCP` filter to display only DHCP-related traffic
+On the Windows 10 VM, I returned to Wireshark and applied a `DHCP` filter to display only DHCP-related traffic
 
 <img width="960" height="682" alt="Screenshot 2026-02-24 204137" src="https://github.com/user-attachments/assets/5dad524f-8a8f-469f-b5ed-71913330f7e6" />
 
 <br>
 <br>
 
-- After setting the filter, I opened **Windows PowerShell** within the Windows 10 VM and entered the command `ipconfig /renew` to request a new IP address from the DHCP server
-- While the command was running, `DHCP` traffic appeared in Wireshark (The capture showed the exchange between the client and the DHCP server during the IP assignment process)
+After setting the filter, I opened **Windows PowerShell** within the Windows 10 VM and entered the command `ipconfig /renew` to request a new IP address from the DHCP server. While the command was running, `DHCP` traffic appeared in Wireshark (The capture showed the exchange between the client and the DHCP server during the IP assignment process).
 
 > [!NOTE]
 > DHCP dynamically assigns IP addresses and network configuration settings, enabling devices to join a network without manual configuration.
@@ -214,7 +211,7 @@ This includes:
 
 **5. Observing DNS Traffic**
 
-- In the Windows 10 VM, I applied a `DNS` filter to view only DNS-related traffic
+In the Windows 10 VM, I applied a `DNS` filter to view only DNS-related traffic.
 
 <img width="879" height="533" alt="Screenshot 2026-02-24 205139" src="https://github.com/user-attachments/assets/e3ce49c9-4e38-4c8e-8a22-62dd867e4f02" />
 
@@ -250,8 +247,7 @@ This includes:
 
 **6. Observing RDP Traffic** 
 
-- I returned to Wireshark and applied the filter `tcp.port == 3389` to view Remote Desktop Protocol `RDP` traffic
-- After applying the filter, I observed continuous network traffic between my computer and the Windows 10 VM (This traffic remained active even when I was not typing or clicking anything.)
+I returned to Wireshark and applied the filter `tcp.port == 3389` to view Remote Desktop Protocol `RDP` traffic. After applying the filter, I observed continuous network traffic between my computer and the Windows 10 VM (This traffic remained active even when I was not typing or clicking anything). 
 
 > [!NOTE]
 > This happens because `RDP` constantly sends data to maintain the remote session and display a live view of the remote computer screen. The continuous transmission ensures that any changes on the remote system, such as mouse movements or screen updates, are shown in real time. 
