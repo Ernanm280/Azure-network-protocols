@@ -52,7 +52,7 @@ For this part of the lab, I observed `ICMP` traffic using Wireshark on the Windo
 <br>
 <br>
 
-Once connected to the Windows 10 VM, I installed and launched Wireshark, started a packet capture, and applied the `ICMP` filter to display only `ICMP` traffic  
+Once connected to the Windows 10 VM, I installed and launched Wireshark, started a packet capture, and applied the `ICMP` filter to display only `ICMP` traffic.  
 
 <img width="1812" height="888" alt="image" src="https://github.com/user-attachments/assets/80508f41-8992-4105-828d-9798a3fb27ed" />
 <img width="1886" height="915" alt="image" src="https://github.com/user-attachments/assets/eb959b0f-783c-411d-894a-cd462450668f" />
