@@ -95,9 +95,7 @@ While the ping was running on the Windows 10 VM, I observed the `ICMP` request a
 
 **2. Configuring a Firewall (Network Security Group)**
  
-I initiated a continuous ping from the Windows 10 VM to the Ubuntu VM (Private IP address) using the `ping -t` command in PowerShell.
-> [!NOTE]
-> This caused the `ping` to run continuously, allowing me to analyze the traffic in real time in Wireshark.
+I initiated a continuous ping from the Windows 10 VM to the Ubuntu VM (Private IP address) using the `ping -t` command in PowerShell. This caused `ping` to run continuously, allowing me to analyze the traffic in real time in Wireshark.
 
 <img width="624" height="555" alt="image" src="https://github.com/user-attachments/assets/fc9719cf-d706-4871-8813-325d3d813736" />
 
@@ -173,9 +171,6 @@ From the Windows 10 VM, I initiated an SSH connection to the Ubuntu VM using **P
 <br>
 
 Once connected, I executed basic commands such as `whoami` and `pwd` within the SSH session. During this time, I observed continuous SSH traffic in Wireshark, confirming that communication between the two systems was active and encrypted. After finishing observing the traffic, I typed `exit` and pressed Enter to close the `SSH` connection.
-
-> [!NOTE]
-> This demonstrates how `SSH` enables secure remote communication between two systems.
 
 <img width="1406" height="826" alt="Screenshot 2026-02-24 201620" src="https://github.com/user-attachments/assets/198ba6a0-08b9-4067-b40b-2fecfcac71fe" />
 
