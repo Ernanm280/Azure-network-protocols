@@ -172,17 +172,13 @@ From the Windows 10 VM, I initiated an SSH connection to the Ubuntu VM using **P
 <br>
 <br>
 
-Once connected, I executed basic commands such as `whoami` and `pwd` within the SSH session. During this time, I observed continuous SSH traffic in Wireshark, confirming that communication between the two systems was active and encrypted.
+Once connected, I executed basic commands such as `whoami` and `pwd` within the SSH session. During this time, I observed continuous SSH traffic in Wireshark, confirming that communication between the two systems was active and encrypted. After finishing observing the traffic, I typed `exit` and pressed Enter to close the `SSH` connection.
 
 > [!NOTE]
 > This demonstrates how `SSH` enables secure remote communication between two systems.
 
 <img width="1406" height="826" alt="Screenshot 2026-02-24 201620" src="https://github.com/user-attachments/assets/198ba6a0-08b9-4067-b40b-2fecfcac71fe" />
 
-<br>
-<br>
-
-After finishing observing the traffic, I typed `exit` and pressed Enter to close the `SSH` connection.
 
 ---
 
